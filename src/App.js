@@ -52,8 +52,8 @@ class App extends Component {
     return (
       <div>
         Parent Component
-        <Subject title={this.state.week_1.subject}/>
-        <Subject title={this.state.week_2.subject}/>
+        <Subject subject={this.state.week_1.subject}/>
+        <Subject subject={this.state.week_2.subject}/>
         <Subject />
       </div>
     );
