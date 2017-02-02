@@ -5,11 +5,13 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      resource: "http://hatchoregon.com",
+    };
   }
   render() {
     return (
-      <a href="http://hatchoregon.com">Best thing ever.</a>
+      <a href={this.state.resource}>Best thing ever.</a>
     );
   }
 }
