@@ -33,9 +33,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.resources.map (
-          resource => <a href={resource.url}>{resource.title}</a>
-        )}
+        <ul>
+          {this.state.resources.map (
+            resource => <li>
+                          <a href={resource.url}>{resource.title}</a>
+                        </li>
+          )}
+        </ul>
       </div>
     );
   }
