@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
+import Subject from './components/Subject';
 import './App.css';
 
 class App extends Component {
@@ -51,14 +51,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ul>
-          {this.state.week_1.resources.map (
-            resource => <li>
-                          <a href={resource.url}>{resource.title}</a>
-                          <span> | {resource.date_added}</span>
-                        </li>
-          )}
-        </ul>
+        Parent Component
+        <Subject title={this.state.week_1.subject}/>
+        <Subject title={this.state.week_2.subject}/>
+        <Subject />
       </div>
     );
   }
