@@ -53,10 +53,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        Parent Component
-        {console.log(this.state)}
-        <Subject items={this.state.resources[0]}/>
-        <Subject items={this.state.resources[1]}/>
+        {this.state.resources.map( (resource) => {
+          return (
+            <Subject items={resource} />
+          )
+        })}
       </div>
     );
   }

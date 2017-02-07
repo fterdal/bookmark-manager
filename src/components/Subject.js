@@ -16,7 +16,7 @@ export default class Subject extends Component {
           {this.props.items.resources.map((resource) => {
               return(
                 <li>
-                  <a href="{resource.url}">{resource.title}</a>
+                  <a href={resource.url}>{resource.title}</a>
                 </li>
               )
           })}
