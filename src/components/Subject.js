@@ -12,10 +12,10 @@ export default class Subject extends Component {
     return (
       <div>
         <h2>{this.props.items.subject}</h2>
-        <ul>
+        <ul className="list-group">
           {this.props.items.resources.map((resource) => {
               return(
-                <li>
+                <li className="list-group-item">
                   <a href={resource.url}>{resource.title}</a>
                 </li>
               )

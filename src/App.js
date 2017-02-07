@@ -8,7 +8,7 @@ class App extends Component {
     this.state =  {
       resources: [
       {
-        subject: "Let's...get...functional, functional!",
+        subject: "Let's... get... functional, functional!",
         resources: [
           {
             title: "Higher Order Functions",
@@ -135,15 +135,17 @@ class App extends Component {
     ]
   }
   };
-  
+
   render() {
     return (
-      <div>
-        {this.state.resources.map( (resource) => {
-          return (
-            <Subject items={resource} />
-          )
-        })}
+      <div className="row">
+        <div className="col-md-8 col-md-offset-2">
+          {this.state.resources.map( (resource) => {
+            return (
+              <Subject items={resource} />
+            )
+          })}
+        </div>
       </div>
     );
   }
