@@ -6,7 +6,7 @@ class App extends Component {
   constructor() {
     super();
     this.state =  {
-      stuff: [
+      resources: [
       {
         subject: "Functional Programming Basics",
         resources: [
@@ -55,8 +55,8 @@ class App extends Component {
       <div>
         Parent Component
         {console.log(this.state)}
-        <Subject subject={this.state.stuff[0].subject}/>
-        <Subject subject={this.state.stuff[1].subject}/>
+        <Subject items={this.state.resources[0]}/>
+        <Subject items={this.state.resources[1]}/>
       </div>
     );
   }
