@@ -5,8 +5,9 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      week_1: {
+    this.state =  {
+      stuff: [
+      {
         subject: "Functional Programming Basics",
         resources: [
           {
@@ -26,7 +27,7 @@ class App extends Component {
           },
         ]
       },
-      week_2: {
+      {
         subject: "Learning How To Learn React",
         resources: [
           {
@@ -45,16 +46,17 @@ class App extends Component {
             date_added: "2017-02-1",
           },
         ]
-      },
-    };
+      }
+    ]
   }
+  };
   render() {
     return (
       <div>
         Parent Component
-        <Subject subject={this.state.week_1.subject}/>
-        <Subject subject={this.state.week_2.subject}/>
-        <Subject />
+        {console.log(this.state)}
+        <Subject subject={this.state.stuff[0].subject}/>
+        <Subject subject={this.state.stuff[1].subject}/>
       </div>
     );
   }
