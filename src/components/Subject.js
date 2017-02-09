@@ -21,26 +21,37 @@ export default class Subject extends Component {
   render() {
     let buttonText = null;
     if (this.state.isClicked == true) {
-      buttonText = 'Elephant'; }
+      buttonText = 'Show'; }
     else {
-      buttonText = 'Monkey'; }
+      buttonText = 'Hide'; }
+
+    let listContent = null;
+    if (this.state.isClicked == false) {
+      listContent =
+          <ul className="list-group">
+            {this.props.items.resources.map((resource) => {
+                return(
+                  <li className="list-group-item">
+                    <a href={resource.url}>{resource.title}</a>
+                  </li>
+                )
+            })}
+          </ul>;
+    }
+    else {
+      listContent = ''; }
+
     return (
       <div>
+        <div>
         <h3>{this.props.items.subject}</h3>
         <button className="btn btn-primary"
-                onClick={() => this.handleClick()}
-                style={this.state.headerColor}>
+                onClick={() => this.handleClick()}>
+
           {buttonText}
         </button>
-        <ul className="list-group">
-          {this.props.items.resources.map((resource) => {
-              return(
-                <li className="list-group-item">
-                  <a href={resource.url}>{resource.title}</a>
-                </li>
-              )
-          })}
-        </ul>
+        </div>
+        {listContent}
       </div>
     )
   }
