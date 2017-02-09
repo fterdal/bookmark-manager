@@ -12,11 +12,9 @@ export default class Subject extends Component {
     this.setState(prevState => ({
       isClicked: !prevState.isClicked
     }));
-    setTimeout(() =>
-      console.log('isClicked: ' + this.state.isClicked), 250);
+    // setTimeout(() =>
+    //   console.log('isClicked: ' + this.state.isClicked), 250);
   }
-
-  // Event Handlers
 
   render() {
     let buttonText = null;
@@ -47,7 +45,6 @@ export default class Subject extends Component {
         <h3>{this.props.items.subject}</h3>
         <button className="btn btn-primary"
                 onClick={() => this.handleClick()}>
-
           {buttonText}
         </button>
         </div>
