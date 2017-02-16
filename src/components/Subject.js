@@ -37,13 +37,13 @@ export default class Subject extends Component {
 
   render() {
     let buttonText = null;
-    if (this.state.isClicked == true) {
+    if (this.state.isClicked === true) {
       buttonText = 'Show'; }
     else {
       buttonText = 'Hide'; }
 
     let listContent = null;
-    if (this.state.isClicked == false) {
+    if (this.state.isClicked === false) {
       listContent =
           <ul className="list-group">
             {this.props.items.resources.map((resource) => {
@@ -64,12 +64,17 @@ export default class Subject extends Component {
         <div>
         <h3>{this.props.items.subject}</h3>
         <br />
-        <label htmlFor="title">Title</label>
-        <input name="title" onChange={this.handleTyping.bind(this)} value={this.state.title} />
-        <br />
-        <label htmlFor="url">URL</label>
-        <input name="url" onChange={this.handleTyping.bind(this)} value={this.state.url} />
+        <form >
+          <label htmlFor="title">Title</label>
+          <input name="title" onChange={this.handleTyping.bind(this)} value={this.state.title} />
+          <br />
+          <label htmlFor="url">URL</label>
+          <input name="url" onChange={this.handleTyping.bind(this)} value={this.state.url} />
+          <br />
+          <button onClick={this.handleSubmit}>Add Resource</button>
+        </form>
         </div>
+
         <button className="btn btn-primary"
                 onClick={() => this.handleClick()}>
           {buttonText}

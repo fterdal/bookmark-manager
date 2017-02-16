@@ -135,11 +135,13 @@ class App extends Component {
       ]
     }
     this.addNewResource.bind(this);
+
   };
 
   addNewResource(subject, resource) {
     const tempState = this.state;
     tempState.resources[subject].resources.push(resource);
+    console.log('Hello, World!');
     this.setState(tempState);
   }
 
@@ -147,9 +149,9 @@ class App extends Component {
     return (
       <div className="row">
         <div className="col-md-8 col-md-offset-2">
-          {this.state.resources.map( (resource) => {
+          {this.state.resources.map( (resource, index) => {
             return (
-              <Subject addResource={this.addNewResource} items={resource} />
+              <Subject index={index} addResource={this.addNewResource} items={resource} />
             )
           })}
         </div>
