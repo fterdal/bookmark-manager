@@ -41,31 +41,10 @@ export default class NewSubject extends Component {
             onChange={this.handleInputChange}
             value={this.state.newSubject}
           />
+          <br/>
           <button onClick={this.handleSubmit}>Add New Subject</button>
         </form>
       </div>
     )
   }
 }
-
-
-
-{/* <div>
-<h3>{this.props.items.subject}</h3>
-<br />
-<form >
-  <label htmlFor="title">Title</label>
-  <input name="title" onChange={this.handleTyping.bind(this)} value={this.state.title} />
-  <br />
-  <label htmlFor="url">URL</label>
-  <input name="url" onChange={this.handleTyping.bind(this)} value={this.state.url} />
-  <br />
-  <button onClick={this.handleSubmit}>Add Resource</button>
-</form>
-</div>
-
-<button className="btn btn-primary"
-        onClick={() => this.handleClick()}>
-  {buttonText}
-</button>
-{listContent} */}
