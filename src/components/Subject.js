@@ -8,13 +8,22 @@ export default class Subject extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleTyping = this.handleTyping.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.removeResource = this.removeResource.bind(this);
 
     this.state = {
       isClicked: false,
-      inputText: 'Type Here',
-      title: '',
-      url: '',
+      resources: this.props.items.resources
+      // inputText: 'Type Here',
+      // title: '',
+      // url: '',
     };
+  }
+
+  removeResource(index) {
+    const tempState = this.state;
+    const resources = tempState.resources;
+    resources.splice(index, 1);
+    this.setState(tempState);
   }
 
   handleClick() {
@@ -47,11 +56,13 @@ export default class Subject extends Component {
     if (this.state.isClicked === false) {
       listContent =
           <ul className="list-group">
-            {this.props.items.resources.map((resource) => {
+            {this.state.resources.map((resource, index) => {
                 return(
                   <Resource
                     title={resource.title}
                     url={resource.url}
+                    removeResource={this.removeResource}
+                    index={index}
                   />
                 )
             })}
