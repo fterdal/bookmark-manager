@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Subject from './components/Subject';
 import NewSubject from './components/NewSubject';
+import Resource from './components/Resource';
 import './App.css';
 
 class App extends Component {
@@ -159,10 +160,12 @@ class App extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-8">
-          <NewSubject addSubject={this.addNewSubject}/>
-        </div>
         <div className="col-md-8 col-md-offset-2">
+          <div className="col-md-8">
+            <NewSubject addSubject={this.addNewSubject}/>
+          </div>
+          <br />
+          <br />
           {this.state.resources.map( (resource, index) => {
             return (
               <Subject

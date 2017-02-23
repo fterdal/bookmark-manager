@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Resource from './Resource';
 
 export default class Subject extends Component {
   constructor(props) {
@@ -48,9 +49,10 @@ export default class Subject extends Component {
           <ul className="list-group">
             {this.props.items.resources.map((resource) => {
                 return(
-                  <li className="list-group-item">
-                    <a href={resource.url}>{resource.title}</a>
-                  </li>
+                  <Resource
+                    title={resource.title}
+                    url={resource.url}
+                  />
                 )
             })}
           </ul>;
