@@ -33,6 +33,7 @@ export default class Subject extends Component {
   }
 
   handleTyping(e) {
+    debugger;
     this.setState({[e.target.name]: e.target.value });
   }
 
@@ -42,6 +43,8 @@ export default class Subject extends Component {
       title: this.state.title,
       url: this.state.url,
     }
+    console.log("I exist!!!");
+    debugger;
     this.props.addResource(this.props.index, newResource);
   }
 
