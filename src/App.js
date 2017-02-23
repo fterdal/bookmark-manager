@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import Subject from './components/Subject';
+import NewSubject from './components/NewSubject';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
+
+    this.addNewResource = this.addNewResource.bind(this);
+    this.addNewSubject = this.addNewSubject.bind(this);
+
     this.state =  {
       resources: [
         {
@@ -134,7 +139,7 @@ class App extends Component {
         },
       ]
     }
-    this.addNewResource.bind(this);
+
 
   };
 
@@ -145,13 +150,26 @@ class App extends Component {
     this.setState(tempState);
   }
 
+  addNewSubject(subject) {
+    const tempState = this.state;
+    tempState.resources.push(subject);
+    this.setState(tempState);
+  }
+
   render() {
     return (
       <div className="row">
+        <div className="col-md-8">
+          <NewSubject addSubject={this.addNewSubject}/>
+        </div>
         <div className="col-md-8 col-md-offset-2">
           {this.state.resources.map( (resource, index) => {
             return (
-              <Subject index={index} addResource={this.addNewResource} items={resource} />
+              <Subject
+                index={index}
+                addResource={this.addNewResource}
+                items={resource}
+              />
             )
           })}
         </div>
